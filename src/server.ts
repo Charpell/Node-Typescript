@@ -8,6 +8,7 @@ import * as cors from 'cors';
 
 
 import PostRouter from './router/PostRouter';
+import UserRouter from './router/UserRouter';
 
 class Server {
   public app: express.Application;
@@ -38,6 +39,7 @@ class Server {
 
     this.app.use('/', router);
     this.app.use('/api/v1/posts', PostRouter);
+    this.app.use('/api/v1/users', UserRouter);
   }
 }
 
