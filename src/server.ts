@@ -7,6 +7,8 @@ import * as logger from 'morgan';
 import * as cors from 'cors';
 
 
+import PostRouter from './router/PostRouter';
+
 class Server {
   public app: express.Application;
 
@@ -26,7 +28,7 @@ class Server {
     this.app.use(logger('dev'));
     this.app.use(compression());
     this.app.use(helmet());
-    this.app.use(cors());
+    this.app.use(cors()); 
   }
 
   
@@ -35,7 +37,7 @@ class Server {
     router = express.Router();
 
     this.app.use('/', router);
-    // this.app.use('/api/v1/posts', PostRouter)
+    this.app.use('/api/v1/posts', PostRouter);
   }
 }
 
