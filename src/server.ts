@@ -20,7 +20,7 @@ class Server {
   }
   
   public config() {
-    const MONGO_URI = 'mongodb://localhost/wes';
+    const MONGO_URI: string = 'mongodb://localhost/wes';
     mongoose.connect(MONGO_URI || process.env.MONGO_URI);
 
     // config
